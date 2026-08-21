@@ -2,7 +2,6 @@ import signals from '@/data/processed/signals.json';
 import type { Signal } from '@/lib/taxonomy';
 import OverviewFilters from '@/components/overview-filters';
 
-export const revalidate = 0;
 
 export default function HomePage() {
   const allSignals = signals as unknown as Signal[];

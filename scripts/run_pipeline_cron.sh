@@ -58,6 +58,17 @@ export ANTHROPIC_BASE_URL="https://platformgateway2.vip.ebay.com/hubgptgatewaysv
 if bash scripts/run_pipeline.sh >> "$LOG" 2>&1; then
   TOTAL=$(python3 -c "import json; s=json.load(open('data/processed/signals.json')); print(len(s))" 2>/dev/null || echo "?")
   log "Pipeline complete — $TOTAL signals"
+
+  # Push updated signals.json to trigger GitHub Pages rebuild
+  if git diff --quiet data/processed/signals.json; then
+    log "No new signals — skipping git push"
+  else
+    git add data/processed/signals.json >> "$LOG" 2>&1
+    git commit -m "chore: update signals [$(date '+%Y-%m-%d')]" >> "$LOG" 2>&1
+    git push origin main >> "$LOG" 2>&1 && log "Pushed signals.json → GitHub Pages rebuild triggered" \
+      || log "WARN: git push failed"
+  fi
+
   notify "Pipeline complete — $TOTAL signals in dashboard"
 else
   log "ERROR: Pipeline failed (exit $?)"
