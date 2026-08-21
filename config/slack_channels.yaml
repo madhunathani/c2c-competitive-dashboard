@@ -1,0 +1,15 @@
+# slack_channels.yaml — Slack channels to monitor for article links.
+#
+# Requirements:
+#   - SLACK_BOT_TOKEN env var (xoxb-... bot token)
+#   - Bot must be invited to each channel listed below
+#   - Bot scopes: channels:history, channels:read, groups:history, groups:read
+#
+# lookback_days: how many days back to pull messages on each pipeline run.
+# Increase if the pipeline runs infrequently; keep low (3–7) for daily runs.
+
+lookback_days: 7
+
+channels:
+  - c2c-industry-news
+  - c2c-competitive-radar   # note: c2c-insights-radar does not exist

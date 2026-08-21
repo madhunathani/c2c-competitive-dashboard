@@ -1,0 +1,53 @@
+# vocabularies.yaml — Canonical allowed values for all taxonomy fields.
+# These are the authoritative lists used for validation in map_signals.py.
+
+journey_stages:
+  - acquisition        # Attracting new sellers to register and list
+  - listing            # Converting registered sellers into active listers
+  - sale               # Post-listing actions that improve sell-through
+  - engagement_retention # Keeping active sellers engaged and re-listing
+  - multi_stage        # Signal spans multiple stages
+
+levers:
+  - promotions         # Seller-facing discount, coupon, or deal mechanics
+  - marketing          # Paid/organic acquisition campaigns, content, SEO
+  - onboarding         # New seller setup flows, tutorials, checklists
+  - seller_trust       # Ratings, badges, protection messaging, brand identity
+  - draft_reentry      # Recovering sellers with saved but unlisted drafts
+  - resell_entry_point # Entry points for pre-owned / refurbished resellers
+  - fees_monetization  # Fee structure, commission rates, subscription pricing
+  - listing_tools      # Bulk listing, cross-listing, templates, AI helpers
+  - ai_assistant       # In-app AI for photos, titles, descriptions, pricing
+  - search_visibility  # Promoted listings, algorithm boosts, SEO ranking
+  - price_guidance     # In-listing price recommendations, market comparisons
+  - shipping_fulfillment # Label generation, carrier partnerships, locker networks
+  - bx_nudges          # Behavioural prompts, emails, push notifications, streaks
+  - seller_protections # Dispute resolution, chargeback coverage, guarantee policies
+  - balance_wallet     # In-app earnings wallet, instant payouts, spending tools
+
+seller_segments:
+  - prospect           # Not yet registered on the platform
+  - new_seller         # Registered, fewer than 5 sales
+  - reactivated_seller # Was active, went dormant, recently resumed
+  - churned_seller     # Was active, has not listed or sold in 90+ days
+  - occasional_seller  # Lists < 4 times per year
+  - regular_seller     # Lists regularly, mid-volume
+  - nora               # No Registration Activity (registered, never listed)
+  - norl               # No Recent Listing (listed before, not recently)
+  - nors               # No Recent Sale (active lister, low sell-through)
+  - multi_segment      # Signal applies to more than one segment
+
+action_types:
+  - feature_launch
+  - pricing_change
+  - program_launch
+  - program_expansion
+  - partnership
+  - policy_change
+  - ux_change
+  - algorithm_change
+  - marketing_campaign
+  - content_program
+  - integration
+  - geographic_expansion
+  - infrastructure_launch

@@ -1,0 +1,155 @@
+# sources.yaml — List of sources for the fetch_sources.py ingestion script.
+# Each entry is fetched on every pipeline run.
+# type: company_blog | company_announcement | press_release | product_page | policy_page | earnings_call | trade_press
+#
+# Source tier guidance:
+#   Tier 1 (company_blog, press_release, company_announcement): official platform channels — highest confidence
+#   Tier 2 (trade_press): reputable industry/trade outlets covering retail, e-commerce, digital commerce,
+#           marketing, influencers, or social platforms — strong coverage and original reporting
+#   Tier 3 (product_page): official feature/help pages — useful for feature discovery, lower confidence
+#   Avoid: generic marketing blogs, SEO content farms, thin promotional aggregators
+
+sources:
+
+  # ── Facebook Marketplace ──────────────────────────────────────────────────
+  - company: Facebook Marketplace
+    label: meta-newsroom
+    url: https://about.fb.com/news/
+    type: company_announcement
+
+  - company: Facebook Marketplace
+    label: meta-commerce-blog
+    url: https://www.facebook.com/business/news/
+    type: company_blog
+
+  # ── Amazon ────────────────────────────────────────────────────────────────
+  - company: Amazon
+    label: amazon-seller-blog
+    url: https://sell.amazon.com/blog
+    type: company_blog
+
+  - company: Amazon
+    label: amazon-seller-central-news
+    url: https://sellercentral.amazon.com/seller-news
+    type: company_announcement
+
+  # ── Mercari ───────────────────────────────────────────────────────────────
+  - company: Mercari
+    label: mercari-blog
+    url: https://about.mercari.com/blog/
+    type: company_blog
+
+  - company: Mercari
+    label: mercari-press
+    url: https://about.mercari.com/press/
+    type: press_release
+
+  # ── Poshmark ──────────────────────────────────────────────────────────────
+  - company: Poshmark
+    label: poshmark-blog
+    url: https://blog.poshmark.com/
+    type: company_blog
+
+  - company: Poshmark
+    label: poshmark-newsroom
+    url: https://newsroom.poshmark.com/
+    type: press_release
+
+  # ── Depop ─────────────────────────────────────────────────────────────────
+  - company: Depop
+    label: depop-blog
+    url: https://www.depop.com/blog/
+    type: company_blog
+
+  - company: Depop
+    label: depop-newsroom
+    url: https://newsroom.depop.com/
+    type: press_release
+
+  # ── Vinted ────────────────────────────────────────────────────────────────
+  - company: Vinted
+    label: vinted-newsroom
+    url: https://www.vinted.com/newsroom
+    type: press_release
+
+  - company: Vinted
+    label: vinted-seller-centre
+    url: https://www.vinted.com/help/seller-centre
+    type: product_page
+
+  # ── Whatnot ───────────────────────────────────────────────────────────────
+  - company: Whatnot
+    label: whatnot-blog
+    url: https://blog.whatnot.com/
+    type: company_blog
+
+  - company: Whatnot
+    label: whatnot-sellers
+    url: https://www.whatnot.com/sell
+    type: product_page
+
+  # ── Etsy ──────────────────────────────────────────────────────────────────
+  - company: Etsy
+    label: etsy-news
+    url: https://www.etsy.com/news
+    type: company_announcement
+
+  - company: Etsy
+    label: etsy-seller-handbook
+    url: https://www.etsy.com/seller-handbook
+    type: product_page
+
+  # ── Trade Press — Tier 2: reputable industry and trade outlets ─────────────
+  # Retail & e-commerce trade
+  - company: _trade_press
+    label: modern-retail
+    url: https://www.modernretail.co/
+    type: trade_press
+
+  - company: _trade_press
+    label: digital-commerce-360
+    url: https://www.digitalcommerce360.com/
+    type: trade_press
+
+  - company: _trade_press
+    label: retail-dive-ecommerce
+    url: https://www.retaildive.com/topic/ecommerce/
+    type: trade_press
+
+  - company: _trade_press
+    label: ecommerce-bytes
+    url: https://www.ecommercebytes.com/
+    type: trade_press
+
+  - company: _trade_press
+    label: pymnts-marketplace
+    url: https://www.pymnts.com/tag/marketplace/
+    type: trade_press
+
+  # Business & tech (strong marketplace/platform coverage)
+  - company: _trade_press
+    label: techcrunch-marketplace
+    url: https://techcrunch.com/tag/marketplace/
+    type: trade_press
+
+  - company: _trade_press
+    label: techcrunch-ecommerce
+    url: https://techcrunch.com/tag/e-commerce/
+    type: trade_press
+
+  # Fashion resale & social commerce
+  - company: _trade_press
+    label: business-of-fashion-news
+    url: https://www.businessoffashion.com/news/
+    type: trade_press
+
+  - company: _trade_press
+    label: glossy-fashion
+    url: https://www.glossy.co/
+    type: trade_press
+
+  # Marketing & creator economy
+  - company: _trade_press
+    label: marketing-brew
+    url: https://www.marketingbrew.com/
+    type: trade_press
